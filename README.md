@@ -1,11 +1,12 @@
-# Spēle *"** Čūskas un kāpnes **"*
+# Spēle *"** Metamais kauliņš **"*
 
 ## Ideja
 
-> Spēle piedalas 1-4 spēletaji un viņi met spēlu kaliņu (no 1 līdz 6). Uz laukuma ir cūskas un kāpnes kas var apvieglot vai apgrutināt spēli.
+> Spēle piedalas no 1 līdz 2 spēletajiem. Spēle abi spēletaji met kauliņu un uzvar tas ikas izmest lielaku skaitli.
 
 ## Noteikumi
 
-1. 
-2. 
-3. 
+1. Spēle ir 3 raundi
+2. Lietotajs ievada komandu lai mestu kauliņu (**ROLL**)
+3. Nākamais spēletajs ievada komandu
+4. Parbaudas kurš dabujs lielaku ciparu, jā punktu skaits ir vienāds, tad raunds sākas no jauna,bet ja nē, tad sākas jaunas raunds
