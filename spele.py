@@ -257,9 +257,9 @@ while True:
     print(score1,":",score2)
     os.system("pause")
     os.system("cls")
-    if score1 == 2:
+    if score1 == 3:
         break
-    elif score2 == 2:
+    elif score2 == 3:
         break
 
 if score1 > score2:
