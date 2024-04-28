@@ -2,9 +2,6 @@ from random import randint
 from time import sleep
 import os
 
-round = 1
-score1 = 0
-score2 = 0
 
 dice1 = """ 
     ╔═════════╗
@@ -67,42 +64,46 @@ kruze2 = """
     ║          ║
     ╚══════════╝
 """
-a = True
-while a:
-    print('''
-    ___                                                       
-    (  _`\  _                                                  
-    | | ) |(_)   ___    __        __     _ _   ___ ___     __  
-    | | | )| | /'___) /'__`\    /'_ `\ /'_` )/' _ ` _ `\ /'__`\\
-    | |_) || |( (___ (  ___/   ( (_) |( (_| || ( ) ( ) |(  ___/
-    (____/'(_)`\____)`\____)   `\__  |`\__,_)(_) (_) (_)`\____)
-                               ( )_) |                         
-                                \___/'                         
-        ''')
-    skaits = int(input('''
+
+while True:
+    a = True
+    skaits = 0
+    while a:
+        print('''
+        ___                                                       
+        (  _`\  _                                                  
+        | | ) |(_)   ___    __        __     _ _   ___ ___     __  
+        | | | )| | /'___) /'__`\    /'_ `\ /'_` )/' _ ` _ `\ /'__`\\
+        | |_) || |( (___ (  ___/   ( (_) |( (_| || ( ) ( ) |(  ___/
+        (____/'(_)`\____)`\____)   `\__  |`\__,_)(_) (_) (_)`\____)
+                                   ( )_) |                         
+                                    \___/'                         
+            ''')
+        skaits = int(input('''
 Ja gribat vienu spēletāju, tad ievadiet: 1
 Ja gribat divus spēletājus, tad ievadiet: 2
 Ja gribat iziet, uzspežiet enter
 
 ievadiet spēletaju skaitu:
-'''))
-    if skaits == 1:
-        print("Viena spēletāja režims")
-        a = False
-    elif skaits == 2:
-        print("Divu spēletāja režims")
-        a = False
-    else:
-        print("kļūda, nepareizi ievadīts simbols")
-    sleep(1)
-    os.system("cls")
-
-
-while True:
-    print(round,".raunds!",sep='')
-    sleep(1)
-    os.system("cls")
-    print("""
+    '''))
+        if skaits == 1:
+            print("Viena spēletāja režims")
+            a = False
+        elif skaits == 2:
+            print("Divu spēletāja režims")
+            a = False
+        else:
+            print("kļūda, nepareizi ievadīts simbols")
+        sleep(1)
+        os.system("cls")
+    round = 1
+    score1 = 0
+    score2 = 0
+    while True:
+        print(round,".raunds!",sep='')
+        sleep(1)
+        os.system("cls")
+        print("""
  _____                     _                  _   
 |_   _|_ _  __ _  __ _  __| |  _ __ ___   ___| |_ 
   | |/ _` |/ _` |/ _` |/ _` | | '_ ` _ \ / _ \ __|
@@ -114,37 +115,37 @@ while True:
 | |_\__ \ |_) |  __/| |  __/| || (_| || \__ \     
 |_(_)___/ .__/ \___||_|\___| \__\__,_|/ |___/     
         |_|                         |__/          
-""")
-    os.system("pause")
-    os.system("cls")
-    dice = randint(1,6)
-    for x in range(7):
-        print(kruze1)
-        sleep(0.2)
+    """)
+        os.system("pause")
         os.system("cls")
-        print(kruze2)
-        sleep(0.2)
-        os.system("cls")
-    if dice == 1:
-        print(dice1)
-    elif dice == 2:
-        print(dice2)
-    elif dice == 3:
-        print(dice3)
-    elif dice == 4:
-        print(dice4)
-    elif dice == 5:
-        print(dice5)
-    elif dice == 6:
-        print(dice6)
-    player1 = dice
+        dice = randint(1,6)
+        for x in range(7):
+            print(kruze1)
+            sleep(0.2)
+            os.system("cls")
+            print(kruze2)
+            sleep(0.2)
+            os.system("cls")
+        if dice == 1:
+            print(dice1)
+        elif dice == 2:
+            print(dice2)
+        elif dice == 3:
+            print(dice3)
+        elif dice == 4:
+            print(dice4)
+        elif dice == 5:
+            print(dice5)
+        elif dice == 6:
+            print(dice6)
+        player1 = dice
 
-    sleep(1)
+        sleep(1)
 
-    if skaits == 1:
-        os.system("cls")
-        print("""
- ____        _                                  _   
+        if skaits == 1:
+            os.system("cls")
+            print("""
+____        _                                  _   
 |  _ \  __ _| |_ ___  _ __ ___   _ __ ___   ___| |_ 
 | | | |/ _` | __/ _ \| '__/ __| | '_ ` _ \ / _ \ __|
 | |_| | (_| | || (_) | |  \__ \ | | | | | |  __/ |_ 
@@ -153,12 +154,12 @@ while True:
 | |/ / _` | | | | | | '_ \| | | / __|               
 |   < (_| | |_| | | | | | | |_| \__ \               
 |_|\_\__,_|\__,_|_|_|_| |_|\__,_|___/               
-                    )_)                             
-""")
-        sleep(2)
-    else:
-        os.system("cls")
-        print("""
+                      )_)                             
+    """)
+            sleep(2)
+        else:
+            os.system("cls")
+            print("""
  _____                     _                  _   
 |_   _|_ _  __ _  __ _  __| |  _ __ ___   ___| |_ 
   | |/ _` |/ _` |/ _` |/ _` | | '_ ` _ \ / _ \ __|
@@ -169,39 +170,39 @@ while True:
  / __/ _\__ \ |_) |  __/| |  __/| || (_| || \__ \ 
 |_____(_)___/ .__/ \___||_|\___| \__\__,_|/ |___/ 
             |_|                         |__/      
-""")
-        os.system("pause")
-    os.system("cls")
-    dice = randint(1,6)
-    for x in range(7):
-        print(kruze1)
-        sleep(0.2)
+    """)
+            os.system("pause")
         os.system("cls")
-        print(kruze2)
-        sleep(0.2)
+        dice = randint(1,6)
+        for x in range(7):
+            print(kruze1)
+            sleep(0.2)
+            os.system("cls")
+            print(kruze2)
+            sleep(0.2)
+            os.system("cls")
+        if dice == 1:
+            print(dice1)
+        elif dice == 2:
+            print(dice2)
+        elif dice == 3:
+            print(dice3)
+        elif dice == 4:
+            print(dice4)
+        elif dice == 5:
+            print(dice5)
+        elif dice == 6:
+            print(dice6)
+        player2 = dice
+        
+        sleep(1)
         os.system("cls")
-    if dice == 1:
-        print(dice1)
-    elif dice == 2:
-        print(dice2)
-    elif dice == 3:
-        print(dice3)
-    elif dice == 4:
-        print(dice4)
-    elif dice == 5:
-        print(dice5)
-    elif dice == 6:
-        print(dice6)
-    player2 = dice
-    
-    sleep(1)
-    os.system("cls")
 
-    if player1 > player2:
-        round = round + 1
-        score1 = score1 + 1
-        print("""
- \\\\//       _   ___                             _       
+        if player1 > player2:
+            round = round + 1
+            score1 = score1 + 1
+            print("""
+\\\\//       _   ___                             _       
  _\/  __ _ (_) /_ _/  _ __ __ _ _   _ _ __   __| | __ _ 
 / __|/ _` || |/ _` | | '__/ _` | | | | '_ \ / _` |/ _` |
 \__ \ (_| || | (_| | | | | (_| | |_| | | | | (_| | (_| |
@@ -210,19 +211,19 @@ while True:
  _   _ ______   ____ _ _ __ /_ _(_) __ _                
 | | | |_  /\ \ / / _` | '__/ _ \| |/ _` |               
 | |_| |/ /  \ V / (_| | | |  __/| | (_| |               
- \__,_/___|  \_/ \__,_|_|  \___|/ |\__,_|               
- _               _____   _____|__/___  _                
+\__,_/___|  \_/ \__,_|_|  \___|/ |\__,_|               
+_               _____   _____|__/___  _                
 / |  ___ _ __   /_ _/ | /_ _/ |_ /_ _/(_)___            
 | | / __| '_ \ / _ \| |/ _ \| __/ _` || / __|           
 | |_\__ \ |_) |  __/| |  __/| || (_| || \__ \           
 |_(_)___/ .__/ \___||_|\___| \__\__,_|/ |___/           
-        |_|                         |__/                
-""")
-    elif player1 < player2:
-        round = round + 1
-        score2 = score2 + 1
-        print("""
- \\\\//       _   ___                             _       
+            |_|                         |__/                
+    """)
+        elif player1 < player2:
+            round = round + 1
+            score2 = score2 + 1
+            print("""
+\\\\//       _   ___                             _       
  _\/  __ _ (_) /_ _/  _ __ __ _ _   _ _ __   __| | __ _ 
 / __|/ _` || |/ _` | | '__/ _` | | | | '_ \ / _` |/ _` |
 \__ \ (_| || | (_| | | | | (_| | |_| | | | | (_| | (_| |
@@ -231,16 +232,16 @@ while True:
  _   _ ______   ____ _ _ __ /_ _(_) __ _                
 | | | |_  /\ \ / / _` | '__/ _ \| |/ _` |               
 | |_| |/ /  \ V / (_| | | |  __/| | (_| |               
- \__,_/___|  \_/ \__,_|_|  \___|/ |\__,_|               
+\,__,_/___|  \_/ \__,_|_|  \___|/ |\__,_|               
  ____                _____   _|__/    ___  _            
 |___ \   ___ _ __   /_ _/ | /_ _/ |_ /_ _/(_)___        
   __) | / __| '_ \ / _ \| |/ _ \| __/ _` || / __|       
  / __/ _\__ \ |_) |  __/| |  __/| || (_| || \__ \       
 |_____(_)___/ .__/ \___||_|\___| \__\__,_|/ |___/       
             |_|                         |__/            
-""")
-    else:
-        print('''
+    """)
+        else:
+            print('''
  _   _      _     _    _          _                                 _       
 | \ | | ___(_)___| | _(_)_ __ ___| |_     _ __ __ _ _   _ _ __   __| |___   
 |  \| |/ _ \ |_  / |/ / | '__/ __| __|   | '__/ _` | | | | '_ \ / _` / __|  
@@ -251,19 +252,19 @@ while True:
 / __|/ _` | |/ / __| |/ _ \/ __| | '_ \ / _ \    | |/ _` | | | | '_ \ / _` |
 \__ \ (_| |   <\__ \ |  __/\__ \ | | | | (_) |   | | (_| | |_| | | | | (_| |
 |___/\__,_|_|\_\___/_|\___||___/ |_| |_|\___/   _/ |\__,_|\__,_|_| |_|\__,_|
-                                               |__/                         
-''')
+                                                |__/                         
+    ''')
 
-    print(score1,":",score2)
-    os.system("pause")
-    os.system("cls")
-    if score1 == 3:
-        break
-    elif score2 == 3:
-        break
+        print(score1,":",score2)
+        os.system("pause")
+        os.system("cls")
+        if score1 == 3:
+            break
+        elif score2 == 3:
+            break
 
-if score1 > score2:
-    print('''
+    if score1 > score2:
+        print('''
  _   _                       _____            
 | | | |______   ____ _ _ __ /_ _(_) __ _      
 | | | |_  /\ \ / / _` | '__/ _ \| |/ _` |     
@@ -275,9 +276,9 @@ if score1 > score2:
 | |_\__ \ |_) |  __/| |  __/ || (_| || \__ \_|
 |_(_)___/ .__/ \___||_|\___|\__\__,_|/ |___(_)
         |_|                        |__/       
-''')
-else:
-    print('''
+    ''')
+    else:
+        print('''
  _   _                       _____                
 | | | |______   ____ _ _ __ /_ _(_) __ _          
 | | | |_  /\ \ / / _` | '__/ _ \| |/ _` |         
@@ -289,5 +290,12 @@ else:
  / __/ _\__ \ |_) |  __/| |  __/ || (_| || \__ \_|
 |_____(_)___/ .__/ \___||_|\___|\__\__,_|/ |___(_)
             |_|                        |__/       
-''')
-input()
+    ''')
+    beigas = str(input("Ja jūs gribat atgriesties uz Menu, tad uzrakstiet (y): "))
+    if beigas == "Y":
+        beigas = "y"
+    if beigas == "y":
+        pass
+        os.system("cls")
+    else:
+        break
