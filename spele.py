@@ -101,10 +101,18 @@ ievadiet spēletaju skaitu:
             print("Divu spēletāja režims")
             a = False
         elif skaits == 3:
+            os.system("cls")
+            print("""5. labako rezultatu tabula
+ """)
+            print("player 1:")
             for i in range(0,5):
-                print(scoreT1[i],scoreT2[i])
-                if i == 4:
-                    os.system("pause")
+                print(i+1,".",scoreT1[i])
+            print()
+            print("player 2:")
+            for i in range(0,5):
+                print(i+1,'.',scoreT2[i])
+            print()
+            os.system("pause")
         else:
             print("kļūda, nepareizi ievadīts simbols")
         sleep(1)
@@ -216,6 +224,9 @@ ____        _                                  _
         sleep(1)
         os.system("cls")
 
+        scoreP1 = scoreP1 + player1
+        scoreP2 = scoreP2 + player2
+
         if player1 > player2:
             round = round + 1
             score1 = score1 + 1
@@ -274,15 +285,12 @@ _               _____   _____|__/___  _
     ''')
 
         print(score1,":",score2)
-        os.system("pause")
+        #os.system("pause")
         os.system("cls")
-        if score1 == 2:
+        if score1 == 3:
             break
-        elif score2 == 2:
+        elif score2 == 3:
             break
-
-        scoreP1 = scoreP1 + player1
-        scoreP2 = scoreP2 + player2
 
     if score1 > score2:
         print('''
@@ -317,11 +325,19 @@ _               _____   _____|__/___  _
         beigas = "y"
     if beigas == "y":
         pass
-        for n in range(4,-1,-1):
-            scoreT1[n] = scoreT1[n-1]
-            scoreT2[n] = scoreT2[n-1]
-        scoreT1[0] = scoreP1
-        scoreT2[0] = scoreP2
+        for i in range(5):
+            if scoreT1[i] < scoreP1:
+                for x in range(6,i+1,-1):
+                    scoreT1[x-1] = scoreT1[x-2]
+                scoreT1[i] = scoreP1
+                break
+        for i in range(5):
+            if scoreT2[i] < scoreP2:
+                for x in range(6,i+1,-1):
+                    scoreT2[x-1] = scoreT2[x-2]
+                scoreT2[i] = scoreP2
+                break
+        
         os.system("cls")
     else:
         break
